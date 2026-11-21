@@ -1,0 +1,20 @@
+{
+    "101":{
+        "id":101,
+        "name":"Flight Control Unit",
+        "type":"FCV",
+        "status":"Operational"
+    },
+    "102":{
+        "id":102,
+        "name":"Navigation System",
+        "type":"NAV",
+        "status":"Operational"
+    },
+    "103":{
+        "id":103,
+        "name":"Communication Array",
+        "type":"COM",
+        "status":"Under Maintenance"
+    }
+}
