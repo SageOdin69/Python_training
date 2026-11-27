@@ -1,39 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-27T18:32:49.404153" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Get Equipment" source="C:\Python_training\Robot_API_Project\tests\test_get_equipment.robot">
-<test id="s1-t1" name="Test Get All Equipment" line="8">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-11-27T18:32:49.919957" level="INFO">Creating Session using : alias=Equipment_API, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>Equipment_API</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-11-27T18:32:49.918959" elapsed="0.000998"/>
+<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-28T00:19:18.473692" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Python_training\Robot_GUI_Project\testcases\login.robot">
+<test id="s1-t1" name="Verify Login Functionality" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-28T00:19:18.993384" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-28T00:19:18.992350" elapsed="3.456223"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T18:32:51.939253" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
-<msg time="2026-11-27T18:32:54.143378" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
-<msg time="2026-11-27T18:32:56.553406" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
-<msg time="2026-11-27T18:32:58.562290" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/equipment (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</msg>
-<var>${response}</var>
-<arg>Equipment_API</arg>
-<arg>/api/equipment</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2026-11-27T18:32:49.920959" elapsed="8.641331">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/equipment (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-11-28T00:19:22.448573" elapsed="0.070000"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2026-11-27T18:32:58.562290" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-28T00:19:22.519575" level="INFO">Typing text 'Robot Framework' into text field 'id=ti6dpd'.</msg>
+<arg>id=ti6dpd</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-28T00:19:22.518573" elapsed="0.156176"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-11-27T18:32:58.562290" elapsed="0.000000"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-11-28T00:19:24.676604" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-11-28T00:19:22.675749" elapsed="2.000855"/>
 </kw>
-<status status="FAIL" start="2026-11-27T18:32:49.913958" elapsed="8.648332">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/equipment (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>name=btnK</arg>
+<arg>ENTER</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-28T00:19:24.676604" elapsed="0.048055"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-11-28T00:19:29.724738" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-11-28T00:19:24.724659" elapsed="5.000079"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-28T00:19:29.853435" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-11-28T00:19:29.854436" level="FAIL">Page should have contained text 'Robot Framework' but did not.</msg>
+<arg>Robot Framework</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-11-28T00:19:29.724738" elapsed="0.130698">Page should have contained text 'Robot Framework' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-11-28T00:19:18.991359" elapsed="10.865076">Page should have contained text 'Robot Framework' but did not.</status>
 </test>
-<status status="FAIL" start="2026-11-27T18:32:49.406265" elapsed="9.156025"/>
+<status status="FAIL" start="2026-11-28T00:19:18.475699" elapsed="11.380736"/>
 </suite>
 <statistics>
 <total>
@@ -42,12 +56,9 @@
 <tag>
 </tag>
 <suite>
-<stat name="Test Get Equipment" id="s1" pass="0" fail="1" skip="0">Test Get Equipment</stat>
+<stat name="Login" id="s1" pass="0" fail="1" skip="0">Login</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-11-27T18:32:51.939253" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
-<msg time="2026-11-27T18:32:54.143378" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
-<msg time="2026-11-27T18:32:56.553406" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/equipment</msg>
 </errors>
 </robot>

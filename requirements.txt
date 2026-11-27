@@ -7,3 +7,4 @@ matplotlib
 Flask
 robotframework
 robotframework-requests
+robotframework-seleniumlibrary
