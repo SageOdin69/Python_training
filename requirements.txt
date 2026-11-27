@@ -5,3 +5,5 @@ numpy
 pandas
 matplotlib
 Flask
+robotframework
+robotframework-requests
