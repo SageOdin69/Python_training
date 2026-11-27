@@ -1,4 +1,7 @@
+import threading
+import time
 import pytest
+import xdist
 from task1 import app
 
 @pytest.fixture
@@ -8,6 +11,7 @@ def client():
         yield client
 
 def test_get_equipment(client):
+    print("Testing GET /api/equipment")
     response = client.get('/api/equipment')
     assert response.status_code == 200
     data = response.get_json()
@@ -25,9 +29,11 @@ def test_get_equipment(client):
     assert data[2]['name'] == "Communication Array"
     assert data[2]['type'] == "COM"
     assert data[2]['status'] == "Under Maintenance"
+    print("GET /api/equipment test passed")
 
 @pytest.mark.parametrize("equipment_id", [101, 102, 103])
 def test_get_equipment_by_id(client, equipment_id):
+    print(f"Testing GET /api/equipment/{equipment_id}")
     response = client.get(f'/api/equipment/{equipment_id}')
     assert response.status_code == 200
     data = response.get_json()
@@ -41,7 +47,4 @@ def test_get_equipment_by_id(client, equipment_id):
         print("Name: ", data['name'])
         print("Type: ", data['type'])
         print("Status: ", data['status'])
-    #assert data['id'] == equipment_id
-    # assert data['name'] == "Flight Control Unit"
-    # assert data['type'] == "FCV"
-    # assert data['status'] == "Operational"'''
+    print("GET /api/equipment/{equipment_id} test passed")
