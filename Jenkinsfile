@@ -20,11 +20,11 @@ pipeline{
         bat  '''start "FlaskApp" /B python app.py'''
       }
     }
-    stage("Execute API Test'){
-          steps{
-            bat  '''python -m robot test_2.robot'''
-          }
-        }
+    stage('Execute API Test'){
+      steps{
+        bat  '''python -m robot test_2.robot'''
+      }
     }
+}
 }
           
