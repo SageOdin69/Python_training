@@ -25,7 +25,7 @@ pipeline{
     stage('Execute API Test'){
       steps{
         dir("${WORKSPACE}\\Robot_API_Project\\tests"){
-          bat  'python -m robot test_2.robot'
+          bat  'python -m robot test2.robot'
       }
       }
     }
